@@ -4,14 +4,13 @@ import { lazy, Suspense } from "react";
 import type { ComponentType } from "react";
 
 import HomePage from "./pages/Home/HomePage";
-import About from "./pages/About";
-import Community from "./pages/Community";
-import Project from "./pages/Projects";
+import About from "./pages/about/About";
+import Community from "./pages/community/Community";
+import Project from "./pages/projects/Projects";
 // import Resources from "./pages/Resources";
 import RootLayer from "./pages/RootLayer";
-import Partners from "./pages/Partners";
-import Event from "./pages/Event";
-const MembersForm = lazy(() => import("./pages/MembersForm"));
+import Partners from "./pages/Partners/Partners";
+import Event from "./pages/event/Event";
 const PartnersForm = lazy(() => import("./pages/PartnersForm"));
 
 const wrap = (Component: ComponentType) => (
@@ -34,7 +33,6 @@ const router = createBrowserRouter([
       // {path:'/resources', Component: Resources},
       { path: "/projects", Component: Project },
       { path: "/partners", Component: Partners },
-      { path: "/membersform", element: wrap(MembersForm) },
       { path: "/partnersform", element: wrap(PartnersForm) },
     ],
   },
