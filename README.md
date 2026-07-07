@@ -220,7 +220,7 @@ for more information.
 
 <div align="center">
 
-### Built with ❤️ by the Open Source Kigali Community
+### Built with Love by the Open Source Kigali Community
 
 Empowering African developers through open source.
 
