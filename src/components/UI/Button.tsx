@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { cn }         from "@/lib/utils";
 
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "dark";
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "dark" | "donate";
 export type ButtonSize    = "sm" | "md" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,6 +20,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
   secondary: "bg-transparent hover:bg-[#2b7fff] hover:text-white text-[#2b7fff] border-[#c5d9ff] hover:border-[#2b7fff]",
   ghost:     "bg-transparent hover:bg-white/10 text-white/70 hover:text-white border-white/20 hover:border-white/40",
   dark:      "bg-gray-900 hover:bg-gray-700 text-white border-transparent",
+  donate:    "bg-[#f4cd03] hover:bg-[#d9b703] text-gray-900 border-transparent",
 };
 
 const SIZES: Record<ButtonSize, string> = {
