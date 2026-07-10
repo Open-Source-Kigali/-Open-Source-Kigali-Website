@@ -7,7 +7,8 @@ import LogoWhite from "@/assets/Logo/OSK-primary-logo-1200-400-white.svg";
 import { useScrolled } from "@/hooks";
 import { NAV_LINKS } from "@/constants";
 import PrimaryButton from "@/components/UI/PrimaryButton";
-import primaryCTALink from '@/config/links'
+import { Button } from "@/components/UI";
+import links from '@/config/links'
 
 const Navbar = () => {
   const scrolled = useScrolled(50);
@@ -71,13 +72,25 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA button (desktop) */}
-        <PrimaryButton
-          to={primaryCTALink.primaryCTA}
-          className="hidden md:inline-flex items-center justify-center h-12 px-6 text-sm font-medium whitespace-nowrap rounded-full"
-        >
-          Contribute to OSK
-        </PrimaryButton>
+        {/* CTA buttons (desktop) */}
+        <div className="hidden md:flex items-center gap-3">
+          {links.donate && (
+            <Button
+              href={links.donate}
+              external
+              variant="donate"
+              className="h-12 px-6 text-sm whitespace-nowrap"
+            >
+              Donate
+            </Button>
+          )}
+          <PrimaryButton
+            to={links.primaryCTA}
+            className="inline-flex items-center justify-center h-12 px-6 text-sm font-medium whitespace-nowrap rounded-full"
+          >
+            Contribute to OSK
+          </PrimaryButton>
+        </div>
         {/* Mobile hamburger */}
         <button
           className="md:hidden z-50 p-1"
@@ -112,6 +125,11 @@ const Navbar = () => {
 
           {/* CTA button (mobile) */}
           <PrimaryButton to="https://docs.google.com/forms/d/e/1FAIpQLSfP6ysp6y_SNcuHb1x9v-nMxfXR7-kcyBogN2ZMF--2byOzyg/viewform">Contribute to OSK</PrimaryButton>
+          {links.donate && (
+            <Button href={links.donate} external variant="donate">
+              Donate
+            </Button>
+          )}
         </div>
       )}
     </>
