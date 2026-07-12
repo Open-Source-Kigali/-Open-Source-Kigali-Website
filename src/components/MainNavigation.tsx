@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img
-            src={logo}
+            src={!mobileOpen ? logo : LogoImage}
             alt="Open Source Kigali"
             className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-all duration-300"
           />
