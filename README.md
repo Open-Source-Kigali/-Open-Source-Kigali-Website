@@ -111,15 +111,29 @@ Before running the project locally, ensure you have:
 
 ## Installation & Setup
 
+### 1️⃣ Fork and Clone the Repository
 
-i. `git clone https://github.com/Open-Source-Kigali/osk-frontend.git
- `
+```bash
+ git clone https://github.com/Open-Source-Kigali/osk-frontend.git
+ ```
 
-ii. `npm install`
+### 2️⃣ Install Dependencies
 
-iii. `cp .env`
+```bash
+npm install
+```
 
-iv. `npm run dev`
+### 3️⃣ Create Environment Variables
+
+```bash
+cp .env
+```
+
+### 4️⃣ Start Development Server
+
+```bash
+npm run dev
+```
 
 The application will run at:
 
