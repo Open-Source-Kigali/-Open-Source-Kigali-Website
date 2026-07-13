@@ -34,5 +34,5 @@
     "typescript-eslint": "^8.36.0",
     "vite": "^7.2.4"
   },
-  "descritpion" : "Frontend React application for the Open Source Kigali community website"
+  "description" : "Frontend React application for the Open Source Kigali community website"
 }
