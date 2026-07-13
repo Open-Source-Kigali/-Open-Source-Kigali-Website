@@ -71,8 +71,8 @@ export const ABOUT_TEAM = [
     featured: true,
     objectPosition: "top",
     links: {
-      linkedin: "null",
-      github: "null",
+      linkedin: null,
+      github: null,
       twitter: null,
       instagram: null,
       facebook: null,
