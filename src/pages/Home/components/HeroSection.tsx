@@ -34,10 +34,10 @@ const HeroSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start mt-16">
-                    <PrimaryButton className="hover:scale-[1.05] hover:shadow-lg" to={primaryCTALink.social.discord}>
+                    <PrimaryButton to={primaryCTALink.social.discord}>
                         Join the community
                     </PrimaryButton>
-                    <SecondaryButton className="hover:scale-[1.05] hover:shadow-lg" to="/about">Know More About Us</SecondaryButton>
+                    <SecondaryButton to="/about">Know More About Us</SecondaryButton>
                 </div>
                 <div className="flex flex-wrap justify-center md:justify-start items-center gap-6 md:gap-16 mt-16 pt-6">
                     {HERO_STATS.map((stat, index) => (
