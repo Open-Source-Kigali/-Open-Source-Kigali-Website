@@ -2,7 +2,7 @@ import { formatStat } from "@/lib/formatters";
 import { Skeleton } from "@/components/UI";
 import { COMMUNITY_STATS} from "@/constants";
 import PrimaryButton from "@/components/UI/PrimaryButton";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { useStats } from "@/hooks";
 import primaryCTALink from '@/config/links'
 import {ArrowUpRight} from "lucide-react";
