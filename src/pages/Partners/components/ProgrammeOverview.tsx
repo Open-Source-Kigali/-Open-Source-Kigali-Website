@@ -1,6 +1,6 @@
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 import { Building2, GraduationCap, Landmark, Heart } from "lucide-react";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import { PARTNERS} from "@/constants";
 

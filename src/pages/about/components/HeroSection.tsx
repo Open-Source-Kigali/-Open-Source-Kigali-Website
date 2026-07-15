@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/UI";
 import image13 from "@/assets/images/open13.jpg";
 import { ABOUT_STATS } from "@/constants";
 import { useStats } from "@/hooks/useStats";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import SecondaryButton from "@/components/UI/SecondaryButton";
 import primaryCTALink from '@/config/links'

@@ -59,7 +59,7 @@ const Navbar = () => {
               to={link.path}
               className={({ isActive }) =>
                 isActive
-                  ? "text-primary-colour font-semibold"
+                  ? "text-primary-colour font-semibold underline underline-offset-4 decoration-2"
                   : `font-medium transition-colors duration-200 ${
                       isLight
                         ? "text-gray-900 hover:text-primary-colour"
@@ -117,7 +117,11 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               onClick={() => setMobileOpen(false)}
-              className="text-black"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary-colour font-semibold underline underline-offset-4 decoration-2"
+                  : "text-black hover:text-primary-colour transition-colors duration-200"
+              }
             >
               {link.name}
             </NavLink>

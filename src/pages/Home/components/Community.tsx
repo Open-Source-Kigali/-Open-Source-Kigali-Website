@@ -1,4 +1,4 @@
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import {  EXPLORE_LINKS} from "@/constants";
 import image12 from '@/assets/images/open12.jpg';
 import PrimaryButton from "@/components/UI/PrimaryButton";
