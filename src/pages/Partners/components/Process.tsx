@@ -1,5 +1,5 @@
 import { CheckCircle} from "lucide-react";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { PARTNERSHIP_STEPS,  WHAT_WE_LOOK_FOR } from "@/constants";
 
 

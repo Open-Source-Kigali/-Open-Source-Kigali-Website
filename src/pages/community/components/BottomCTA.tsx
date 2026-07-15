@@ -1,5 +1,5 @@
 import {Github, ArrowUpRight} from "lucide-react";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { FaDiscord } from "react-icons/fa6";
 import primaryCTALink from '@/config/links'
 

@@ -1,7 +1,7 @@
 
 import image2 from "@/assets/images/open2.jpg";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import SecondaryButton from "@/components/UI/SecondaryButton";
 const About = () => {
   return (

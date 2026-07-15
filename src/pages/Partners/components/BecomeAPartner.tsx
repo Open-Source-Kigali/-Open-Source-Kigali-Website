@@ -1,5 +1,5 @@
 import { PARTNERS } from "@/constants";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { NavLink } from "react-router";
 import {  ArrowUpRight, Users, Globe,  Mail} from "lucide-react";
 
