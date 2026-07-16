@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
 import {Calendar, Clock, MapPin, Users, ArrowUpRight, ChevronRight, ChevronDown, Filter, Play, Mic, Zap, Code2, Globe, CheckCircle2, Bell, ChevronLeft} from "lucide-react";
-import { useFilter, useEvents } from "@/hooks";
+import { useFilter, useEvents, usePageTitle } from "@/hooks";
 import { AttendeeBar, Badge , SectionLabel, Loader} from "@/components/UI";
 import type {OSKEvent,EventType,} from "@/types";
 import EyebrowLabel from "@/components/UI/EyebrowLable";
@@ -462,6 +462,7 @@ const EventCard = ({ event }: { event: OSKEvent }) => {
 const Event = () => {
   const [showPast, setShowPast] = useState(false);
   const { events, loading, error } = useEvents();
+  usePageTitle("Events — Open Source Kigali");
 
   const {
     filtered,

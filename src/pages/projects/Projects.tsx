@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/UI/";
 import { Card, SectionLabel, Loader } from "@/components/UI";
-import { useFilter, useProjects } from "@/hooks";
+import { useFilter, usePageTitle, useProjects } from "@/hooks";
 import { GOOD_FIRST_ISSUES } from "@/constants";
 import type { Projects, Issue, ProjectStatus, ProjectCategory } from "@/types";
 import EyebrowLabel from "@/components/UI/EyebrowLable";
@@ -356,6 +356,7 @@ const IssueRow = ({ issue }: { issue: Issue }) => (
 
 // ─── Page
 const Project = () => {
+  usePageTitle("Projects — Open Source Kigali");
   const { projects, loading, error } = useProjects();
 
   // ── Filter hook — replaces all the inline useState filter logic
