@@ -1,4 +1,4 @@
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 import { VALUES} from "@/constants";
 

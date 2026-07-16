@@ -1,6 +1,6 @@
 import {  STORY_POINTS} from "@/constants";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 
 
 

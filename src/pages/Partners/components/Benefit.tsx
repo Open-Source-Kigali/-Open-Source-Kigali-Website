@@ -1,5 +1,5 @@
 import {  Link } from "react-router";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 import { PARTNER_BENEFITS} from "@/constants";
 import { ArrowRight, Users, BookOpen, Briefcase, Globe, CheckCircle,  Building2} from "lucide-react";

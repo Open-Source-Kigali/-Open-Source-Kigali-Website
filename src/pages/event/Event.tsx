@@ -4,7 +4,7 @@ import {Calendar, Clock, MapPin, Users, ArrowUpRight, ChevronRight, ChevronDown,
 import { useFilter, useEvents } from "@/hooks";
 import { AttendeeBar, Badge , SectionLabel, Loader} from "@/components/UI";
 import type {OSKEvent,EventType,} from "@/types";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import socialLink from "@/config/links"
 
 

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import {  useProjects } from "@/hooks";
 import youthImg from "@/assets/images/Youth meetup.jpg";
 import PrimaryButton from "@/components/UI/PrimaryButton";

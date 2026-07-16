@@ -1,6 +1,6 @@
 
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { TESTIMONIALS } from "@/constants/homepage";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 import { useAutoPlay } from "@/hooks";
