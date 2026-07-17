@@ -1,9 +1,9 @@
 import { NavLink } from "react-router";
 import whiteLogo from "@/assets/Logo/OSK-primary-logo-1200-400-white.svg";
-
 import { Mail } from "lucide-react";
 import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import socilLink from "@/config/links";
 
 interface FooterLinkGroup {
   heading: string;
@@ -30,7 +30,6 @@ const linkGroups: FooterLinkGroup[] = [
   {
     heading: "Resources",
     links: [
-      // { label: "Tutorials", to: "/resources" },
       { label: "Blog", to: "/blog" },
       { label: "Events", to: "/events" },
     ],
@@ -45,7 +44,7 @@ const linkGroups: FooterLinkGroup[] = [
       },
       {
         label: "Discord",
-        to: "https://discord.com/invite/3dTFZSn6Tq",
+        to: socilLink.social.discord,
         external: true,
       },
       {
@@ -103,7 +102,7 @@ const Footer = () => {
             <NavLink to="/" className="inline-block mb-4">
               <img
                 src={whiteLogo}
-                alt="Opeen source kigali logo"
+                alt="Open Source Kigali logo"
                 className=" w-24 md:w-32 "
               />
             </NavLink>
@@ -165,9 +164,6 @@ const Footer = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600">
           <p>© {currentYear} Open Source Kigali. All rights reserved.</p>
           <div className="flex gap-5">
-            {/* <NavLink to="/privacy" className="hover:text-gray-400 transition">
-              Privacy Policy
-            </NavLink> */}
             <a
               href="https://docs.google.com/document/d/1K_bIZT09p-8IiPpg1v3RsMD2dZmUzRFWlMp8tfOavcE/edit?usp=sharing"
               target="_blank"

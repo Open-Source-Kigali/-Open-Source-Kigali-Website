@@ -1,8 +1,11 @@
-export const COMMUNITY_STATS = [
-  { value: "1500+", label: "Members", sub: "and growing" },
-  { value: "1", label: "Sessions held", sub: "More to come" },
-  { value: "25+", label: "Pull requests", sub: "merged on GitHub" },
-  { value: "4", label: "Live projects", sub: "open to contribute" },
+import type { StatDisplay } from "@/types";
+import socialLink from "@/config/links"
+
+export const COMMUNITY_STATS: StatDisplay[] = [
+  { key: "members",      label: "Members",       sub: "and growing" },
+  { key: "events",       label: "Sessions held", sub: "More to come" },
+  { key: "pullRequests", label: "Pull requests", sub: "merged on GitHub" },
+  { key: "projects",     label: "Live projects", sub: "open to contribute" },
 ];
 
 export const CHANNELS = [
@@ -84,7 +87,7 @@ export const SOCIAL_PLATFORMS = [
     handle: "OSK Community",
     desc: "Main hub for daily chat, sessions, and support",
     color: "bg-indigo-500",
-    link: "https://discord.com/invite/3dTFZSn6Tq",
+    link: socialLink.social.discord,
     cta: "Join Server",
     iconKey: "discord",
   },
