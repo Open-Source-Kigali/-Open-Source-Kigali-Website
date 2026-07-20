@@ -6,7 +6,7 @@ import { AttendeeBar, Badge , SectionLabel, Loader} from "@/components/UI";
 import type {OSKEvent,EventType,} from "@/types";
 import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import socialLink from "@/config/links"
-
+import { usePageTitle } from "@/hooks";
 
 
 // ─── Meta maps 
@@ -460,6 +460,7 @@ const EventCard = ({ event }: { event: OSKEvent }) => {
 // ─── Page 
 
 const Event = () => {
+  usePageTitle("Events — Open Source Kigali");
   const [showPast, setShowPast] = useState(false);
   const { events, loading, error } = useEvents();
 

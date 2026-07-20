@@ -22,7 +22,7 @@ import { GOOD_FIRST_ISSUES } from "@/constants";
 import type { Projects, Issue, ProjectStatus, ProjectCategory } from "@/types";
 import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-
+import { usePageTitle } from "@/hooks";
 // ─── Meta maps
 const STATUS_META: Record<
   ProjectStatus,
@@ -356,6 +356,7 @@ const IssueRow = ({ issue }: { issue: Issue }) => (
 
 // ─── Page
 const Project = () => {
+  usePageTitle("Projects — Open Source Kigali");
   const { projects, loading, error } = useProjects();
 
   // ── Filter hook — replaces all the inline useState filter logic
