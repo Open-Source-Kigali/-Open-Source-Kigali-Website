@@ -225,3 +225,11 @@ for more information.
 Empowering African developers through open source.
 
 </div>
+
+## Setup
+
+Copy the example environment file and adjust values:
+
+```bash
+cp .env.example .env
+```
