@@ -11,6 +11,7 @@ import Project from "./pages/projects/Projects";
 import RootLayer from "./pages/RootLayer";
 import Partners from "./pages/Partners/Partners";
 import Event from "./pages/event/Event";
+import DonatePage from "./pages/donate/DonatePage";
 const PartnersForm = lazy(() => import("./pages/PartnersForm"));
 
 const wrap = (Component: ComponentType) => (
