@@ -101,7 +101,7 @@ const Footer = () => {
             <NavLink to="/" className="inline-block mb-4">
               <img
                 src={whiteLogo}
-                alt="Open Source Kigali logo"
+                alt="Open Source Kigali Logo"
                 className=" w-24 md:w-32 "
               />
             </NavLink>
