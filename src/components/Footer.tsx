@@ -29,8 +29,8 @@ const linkGroups: FooterLinkGroup[] = [
   {
     heading: "Resources",
     links: [
-      { label: "Blog", to: "/blog" },
-      { label: "Events", to: "/events" },
+      // Blog route does not exist yet — omit until the page ships.
+      { label: "Events", to: "/event" },
     ],
   },
   {
