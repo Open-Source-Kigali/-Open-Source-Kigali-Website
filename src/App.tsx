@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import { lazy, Suspense } from "react";
+import Loader from "./components/UI/Loader";
 import type { ComponentType } from "react";
 
 import HomePage from "./pages/Home/HomePage";
@@ -15,7 +16,7 @@ import DonatePage from "./pages/donate/DonatePage";
 const PartnersForm = lazy(() => import("./pages/PartnersForm"));
 
 const wrap = (Component: ComponentType) => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<Loader />}>
     <Component />
   </Suspense>
 );
