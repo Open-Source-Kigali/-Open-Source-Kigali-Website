@@ -79,7 +79,7 @@ const socialLinks = [
   {
     icon: <FaWhatsapp size={18} />,
     href: "https://chat.whatsapp.com/GimdjJcYLyyG62zpgsI0zB",
-    label: "Discord",
+    label: "WhatsApp",
   },
   {
     icon: <Mail size={18} />,
