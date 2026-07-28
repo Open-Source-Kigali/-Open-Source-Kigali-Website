@@ -82,7 +82,7 @@ const socialLinks = [
   {
     icon: <FaWhatsapp size={18} />,
     href: "https://chat.whatsapp.com/GimdjJcYLyyG62zpgsI0zB",
-    label: "Discord",
+    label: "WhatsApp",
   },
   {
     icon: <Mail size={18} />,
@@ -104,7 +104,7 @@ const Footer = () => {
             <NavLink to="/" className="inline-block mb-4">
               <img
                 src={whiteLogo}
-                alt="Open Source Kigali logo"
+                alt="Open Source Kigali Logo"
                 className=" w-24 md:w-32 "
               />
             </NavLink>

@@ -36,11 +36,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex justify-between items-center px-4 sm:px-0 lg:px-20 fixed py-4 w-full z-20 transition-colors duration-300 ${
-          isLight
-            ? "bg-white shadow-xl text-gray-900"
-            : "bg-transparent text-white"
-        }`}
+        className={`flex justify-between items-center px-4 sm:px-0 lg:px-20 fixed py-4 w-full z-20 transition-colors duration-300 ${isLight
+          ? "bg-white shadow-xl text-gray-900"
+          : "bg-transparent text-white"
+          }`}
       >
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -51,7 +50,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav links */}
         <div className="hidden md:flex items-center space-x-8 text-base">
           {NAV_LINKS.map((link) => (
             <NavLink
@@ -70,6 +69,21 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
+
+          {/* Donate button — Mozilla-style, stands out from nav links */}
+          <NavLink
+            to="/donate"
+            className={({ isActive }) =>
+              `inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold border-2 transition-all duration-200 hover:scale-105 ${isActive
+                ? "bg-primary-colour border-primary-colour text-white"
+                : isLight
+                  ? "border-primary-colour text-primary-colour hover:bg-primary-colour hover:text-white"
+                  : "border-white/60 text-white hover:bg-primary-colour hover:border-primary-colour"
+              }`
+            }
+          >
+            ❤️ Donate
+          </NavLink>
         </div>
 
         {/* CTA buttons (desktop) */}
@@ -101,9 +115,8 @@ const Navbar = () => {
             <X className={`w-6 h-6 text-gray-900`} />
           ) : (
             <RxHamburgerMenu
-              className={`w-6 h-6 transition-colors duration-300 ${
-                isLight ? "text-gray-900" : "text-white"
-              }`}
+              className={`w-6 h-6 transition-colors duration-300 ${isLight ? "text-gray-900" : "text-white"
+                }`}
             />
           )}
         </button>
@@ -126,6 +139,15 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
+
+          {/* Donate button in mobile drawer */}
+          <NavLink
+            to="/donate"
+            onClick={() => setMobileOpen(false)}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-primary-colour text-primary-colour font-bold text-base hover:bg-primary-colour hover:text-white transition-all duration-200"
+          >
+            ❤️ Donate
+          </NavLink>
 
           {/* CTA button (mobile) */}
           <PrimaryButton to="https://docs.google.com/forms/d/e/1FAIpQLSfP6ysp6y_SNcuHb1x9v-nMxfXR7-kcyBogN2ZMF--2byOzyg/viewform">Contribute to OSK</PrimaryButton>
