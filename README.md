@@ -126,7 +126,7 @@ npm install
 ### 3️⃣ Create Environment Variables
 
 ```bash
-cp .env
+cp .env.example .env
 ```
 
 ### 4️⃣ Start Development Server

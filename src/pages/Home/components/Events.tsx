@@ -117,13 +117,13 @@ export const Events = () => {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <PrimaryButton
-                      to=""
+                      to="/event"
                       className="w-full md:w-auto mb-3 md:mb-0"
                     >
                       Register Now
                     </PrimaryButton>
                     <SecondaryButton
-                      to=""
+                      to="/event"
                       className="w-full md:w-auto mb-3 md:mb-0"
                     >
                       Learn More
