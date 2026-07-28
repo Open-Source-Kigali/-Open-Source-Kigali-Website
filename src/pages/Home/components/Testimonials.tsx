@@ -51,7 +51,7 @@ const Testimonials = () => {
                         >
                             <Quote size={28} style={{ color: "#5b9fff" }} />
                             <p className="text-gray-700 text-sm sm:text-base leading-relaxed flex-1">
-                                "{testimonial.quote}"
+                                {testimonial.quote}
                             </p>
                             <div className="flex items-center gap-3 mt-2">
                                 <div
