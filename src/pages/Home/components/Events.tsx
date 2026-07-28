@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import {  Calendar, Clock, MapPin} from "lucide-react";
 import { Loader} from "@/components/UI";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import SecondaryButton from "@/components/UI/SecondaryButton";
 import {  useEvents} from "@/hooks";

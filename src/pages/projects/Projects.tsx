@@ -20,7 +20,7 @@ import { Card, SectionLabel, Loader } from "@/components/UI";
 import { useFilter, useProjects } from "@/hooks";
 import { GOOD_FIRST_ISSUES } from "@/constants";
 import type { Projects, Issue, ProjectStatus, ProjectCategory } from "@/types";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 
 // ─── Meta maps
