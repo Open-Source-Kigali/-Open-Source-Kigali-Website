@@ -21,28 +21,29 @@ const wrap = (Component: ComponentType) => (
   </Suspense>
 );
 import ErrorPage from "./pages/ErrorPage";
+import ProjectDetails from "./pages/project-details/ProjectDetails";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: RootLayer,
-    ErrorBoundary: ErrorPage,
-    children: [
-      { index: true, Component: HomePage },
-      { path: "/about", Component: About },
-      { path: "/community", Component: Community },
-      { path: "/event", Component: Event },
-      // {path:'/resources', Component: Resources},
-      { path: "/projects", Component: Project },
-      { path: "/partners", Component: Partners },
-      { path: "/donate", Component: DonatePage },
-      { path: "/partnersform", element: wrap(PartnersForm) },
-    ],
-  },
+	{
+		path: "/",
+		Component: RootLayer,
+		ErrorBoundary: ErrorPage,
+		children: [
+			{ index: true, Component: HomePage },
+			{ path: "/about", Component: About },
+			{ path: "/community", Component: Community },
+			{ path: "/event", Component: Event },
+			// {path:'/resources', Component: Resources},
+			{ path: "/projects", Component: Project },
+			{ path: "/projects/:slug", Component: ProjectDetails },
+			{ path: "/partners", Component: Partners },
+			{ path: "/partnersform", element: wrap(PartnersForm) },
+		],
+	},
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 };
 
 export default App;
