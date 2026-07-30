@@ -68,21 +68,6 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-
-          {/* Donate button — Mozilla-style, stands out from nav links */}
-          <NavLink
-            to="/donate"
-            className={({ isActive }) =>
-              `inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold border-2 transition-all duration-200 hover:scale-105 ${isActive
-                ? "bg-primary-colour border-primary-colour text-white"
-                : isLight
-                  ? "border-primary-colour text-primary-colour hover:bg-primary-colour hover:text-white"
-                  : "border-white/60 text-white hover:bg-primary-colour hover:border-primary-colour"
-              }`
-            }
-          >
-            ❤️ Donate
-          </NavLink>
         </div>
 
         {/* CTA button (desktop) */}
@@ -126,15 +111,6 @@ const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-
-          {/* Donate button in mobile drawer */}
-          <NavLink
-            to="/donate"
-            onClick={() => setMobileOpen(false)}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-primary-colour text-primary-colour font-bold text-base hover:bg-primary-colour hover:text-white transition-all duration-200"
-          >
-            ❤️ Donate
-          </NavLink>
 
           {/* CTA button (mobile) */}
           <PrimaryButton to="https://docs.google.com/forms/d/e/1FAIpQLSfP6ysp6y_SNcuHb1x9v-nMxfXR7-kcyBogN2ZMF--2byOzyg/viewform">Contribute to OSK</PrimaryButton>
