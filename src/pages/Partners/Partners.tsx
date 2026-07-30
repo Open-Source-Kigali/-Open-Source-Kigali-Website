@@ -6,21 +6,25 @@ import Benefit from "./components/Benefit";
 import Process from "./components/Process";
 import BecomeAPartner from "./components/BecomeAPartner";
 import BottomCTA from './components/BottomCTA';
+import { usePageTitle } from "@/hooks";
 
 
 // ─── Page 
 
-const Partners = () => (
-  <div className="bg-white">
-    <HeroSection/>
-    <PartnerMarquee showSecondary={false} />
-    <ProgrammeOverview/>
-    <Banner />
-    <Benefit/>
-    <Process/>
-    <BecomeAPartner/>
-    <BottomCTA/>
-  </div>
-);
+const Partners = () => {
+  usePageTitle("Partners — Open Source Kigali");
+  return (
+    <div className="bg-white">
+      <HeroSection/>
+      <PartnerMarquee showSecondary={false} />
+      <ProgrammeOverview/>
+      <Banner />
+      <Benefit/>
+      <Process/>
+      <BecomeAPartner/>
+      <BottomCTA/>
+    </div>
+  );
+};
 
 export default Partners;
