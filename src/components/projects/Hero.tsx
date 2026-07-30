@@ -1,5 +1,5 @@
 import { Filter, Search } from "lucide-react";
-import EyebrowLabel from "../UI/EyebrowLable";
+import EyebrowLabel from "../UI/EyebrowLabel";
 import type { ProjectCategory, ProjectStatus } from "@/types";
 
 interface HeroProps {
