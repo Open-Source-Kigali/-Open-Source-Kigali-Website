@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import { lazy, Suspense } from "react";
+import Loader from "./components/UI/Loader";
 import type { ComponentType } from "react";
 
 import HomePage from "./pages/Home/HomePage";
@@ -11,10 +12,11 @@ import Project from "./pages/projects/Projects";
 import RootLayer from "./pages/RootLayer";
 import Partners from "./pages/Partners/Partners";
 import Event from "./pages/event/Event";
+import DonatePage from "./pages/donate/DonatePage";
 const PartnersForm = lazy(() => import("./pages/PartnersForm"));
 
 const wrap = (Component: ComponentType) => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<Loader />}>
     <Component />
   </Suspense>
 );
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
       // {path:'/resources', Component: Resources},
       { path: "/projects", Component: Project },
       { path: "/partners", Component: Partners },
+      { path: "/donate", Component: DonatePage },
       { path: "/partnersform", element: wrap(PartnersForm) },
     ],
   },
