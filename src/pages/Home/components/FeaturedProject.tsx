@@ -5,7 +5,7 @@ import youthImg from "@/assets/images/Youth meetup.jpg";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import SecondaryButton from "@/components/UI/SecondaryButton";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-import { Loader} from "@/components/UI";
+import { Skeleton } from "@/components/UI";
 
 const FeaturedProject = () => {
     const { projects,loading: projectsLoading,error: projectsError} = useProjects();
@@ -30,7 +30,44 @@ const FeaturedProject = () => {
 
                 {/* Projects content */}
                 {projectsLoading ? (
-                    <Loader />
+                    <>
+                        {/* Featured card skeleton */}
+                        <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-lg mb-12 md:flex md:items-stretch border border-gray-100">
+                            <div className="md:w-1/2 h-64 sm:h-80 md:h-auto relative">
+                                <Skeleton className="w-full h-full rounded-none" />
+                            </div>
+                            <div className="md:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-center bg-white z-10 gap-3">
+                                <Skeleton className="h-7 md:h-8 w-3/4" />
+                                <Skeleton className="h-4 w-full" />
+                                <Skeleton className="h-4 w-5/6 mb-2" />
+                                <div className="flex gap-3 sm:gap-4 flex-wrap mt-2">
+                                    <Skeleton className="h-11 w-full md:w-32 rounded-full" />
+                                    <Skeleton className="h-11 w-full md:w-32 rounded-full" />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Grid cards skeleton */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            {[0, 1, 2].map((i) => (
+                                <div
+                                    key={i}
+                                    className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col"
+                                >
+                                    <Skeleton className="h-48 w-full rounded-none" />
+                                    <div className="p-5 flex flex-col flex-1 gap-3">
+                                        <Skeleton className="h-5 w-3/4" />
+                                        <Skeleton className="h-4 w-full" />
+                                        <Skeleton className="h-4 w-2/3 mb-1" />
+                                        <div className="flex gap-2.5 sm:gap-3 flex-wrap my-3">
+                                            <Skeleton className="h-10 w-full rounded-full" />
+                                            <Skeleton className="h-10 w-full rounded-full" />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </>
                 ) : projectsError ? (
                     <p className="text-center text-sm text-gray-500 py-12">
                         Failed to load projects: {projectsError}
