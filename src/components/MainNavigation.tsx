@@ -96,7 +96,7 @@ const Navbar = () => {
         <button
           className="md:hidden z-50 p-1"
           onClick={() => setMobileOpen((o) => !o)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {mobileOpen ? (
             <X className={`w-6 h-6 text-gray-900`} />
