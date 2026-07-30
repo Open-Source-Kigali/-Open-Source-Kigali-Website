@@ -1,0 +1,209 @@
+================================================================================
+ISSUE 1
+================================================================================
+
+TITLE:
+feat: dynamic year in the Footer copyright notice
+
+LABELS:
+bug, good first issue, needs-triage
+
+BODY:
+## Description
+Currently, the copyright year in the Footer component is hardcoded. We want it to automatically display the current year.
+
+## Expected Behavior
+Modify the copyright line in `src/components/Footer.tsx` to use dynamic JavaScript dates:
+`{new Date().getFullYear()}`
+
+## Files to Modify
+- `src/components/Footer.tsx`
+
+================================================================================
+ISSUE 2
+================================================================================
+
+TITLE:
+feat: add active link styling in MainNavigation
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+When navigating pages, there is no visual indicator showing which page is currently active in the navigation bar.
+
+## Expected Behavior
+Use React Router's `NavLink` component instead of basic links (or leverage the `isActive` render prop from NavLink) to add a distinct class or style (e.g. underline or colored text) to the link corresponding to the current page.
+
+## Files to Modify
+- `src/components/MainNavigation.tsx`
+
+================================================================================
+ISSUE 3
+================================================================================
+
+TITLE:
+style: add hover micro-animations to CTA and Hero buttons
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+Improve the user experience on the landing page by adding smooth CSS hover transitions and micro-animations to the action buttons in the Hero and CTA sections.
+
+## Expected Behavior
+Add CSS transition classes or custom inline CSS hover states (e.g., slight scaling `scale(1.05)` or subtle shadows) to make buttons feel responsive and interactive.
+
+## Files to Modify
+- `src/pages/Home/components/HeroSection.tsx`
+- `src/pages/Home/components/CTA.tsx`
+
+================================================================================
+ISSUE 4
+================================================================================
+
+TITLE:
+feat: add email validation helper in PartnersForm
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+The partner registration form needs to validate that the email format is correct on the frontend before submitting to the backend API.
+
+## Expected Behavior
+Add a simple regex email validation check inside the form submit handler to verify the input string matches a valid email pattern (e.g., `/\S+@\S+\.\S+/`). Display a user-friendly error message if it's invalid.
+
+## Files to Modify
+- `src/pages/PartnersForm.tsx`
+
+================================================================================
+ISSUE 5
+================================================================================
+
+TITLE:
+feat: add a floating scroll-to-top button
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+As the landing page gets longer, users have to manually scroll all the way back up. A floating "Scroll to Top" button would improve page navigation.
+
+## Expected Behavior
+Create a reusable button component that:
+1. Shows up only after scrolling down a certain distance (e.g. 300px).
+2. Smoothly scrolls the window to the top (`window.scrollTo({ top: 0, behavior: 'smooth' })`) when clicked.
+
+## Files to Modify
+- `src/App.tsx` or `src/components/Footer.tsx`
+
+================================================================================
+ISSUE 6
+================================================================================
+
+TITLE:
+fix: add a fallback 404 error page layout for invalid sub-routes
+
+LABELS:
+bug, good first issue, needs-triage
+
+BODY:
+## Description
+When navigating to a route that does not exist, the app should show a friendly 404 page layout instead of a blank page or unstyled browser error.
+
+## Expected Behavior
+Improve the `ErrorPage.tsx` layout to display a custom 404 style with a "Go Back Home" navigation button. Ensure the router correctly mounts it for all unknown paths (`path: "*"`).
+
+## Files to Modify
+- `src/pages/ErrorPage.tsx`
+- `src/App.tsx` (Route definitions)
+
+================================================================================
+ISSUE 7
+================================================================================
+
+TITLE:
+docs: update frontend README.md setup steps
+
+LABELS:
+documentation, good first issue, needs-triage
+
+BODY:
+## Description
+The current README setup section can be clearer and more detailed for new developers joining the event.
+
+## Expected Behavior
+Update the `README.md` file to list:
+1. Node.js version recommendation.
+2. Package manager verification (`npm install`).
+3. Clear description of configuration steps needed (e.g. creating a `.env` file).
+
+## Files to Modify
+- `README.md`
+
+================================================================================
+ISSUE 8
+================================================================================
+
+TITLE:
+refactor: clean up leftover console.log statements
+
+LABELS:
+refactor, good first issue, needs-triage
+
+BODY:
+## Description
+There are several unused/redundant `console.log` statements scattered across the frontend components left over from development.
+
+## Expected Behavior
+Search the codebase for `console.log` and clean up any debug statements that are not critical for runtime monitoring.
+
+## Files to Modify
+- Check components inside `src/components` and `src/pages/`
+
+================================================================================
+ISSUE 9
+================================================================================
+
+TITLE:
+feat: mock toggle button layout for Dark/Light mode
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+We want to introduce dark mode to the site. The first step is adding a visually appealing toggle button (using a sun/moon icon) to the navigation bar.
+
+## Expected Behavior
+Add a styled toggle button or icon next to the navigation links. For now, it only needs to manage local component state (toggling a boolean and rendering the correct icon) to prepare for global theme context integration.
+
+## Files to Modify
+- `src/components/MainNavigation.tsx`
+
+================================================================================
+ISSUE 10
+================================================================================
+
+TITLE:
+feat: search/filter projects by name on Projects page
+
+LABELS:
+enhancement, good first issue, needs-triage
+
+BODY:
+## Description
+When browsing projects, users should be able to quickly search or filter the list dynamically on the frontend.
+
+## Expected Behavior
+Add a text search input above the projects list. Filter the projects array dynamically based on the user's input before mapping/rendering them.
+
+## Files to Modify
+- `src/pages/projects/ProjectsPage.tsx`
+
+================================================================================
