@@ -74,16 +74,13 @@ const Navbar = () => {
 
         {/* CTA buttons (desktop) */}
         <div className="hidden md:flex items-center gap-3">
-          {links.donate && (
-            <Button
-              href={links.donate}
-              external
-              variant="donate"
-              className="h-12 px-6 text-sm whitespace-nowrap"
-            >
-              Donate
-            </Button>
-          )}
+          <Button
+            to="/donate"
+            variant="donate"
+            className="h-12 px-6 text-sm whitespace-nowrap"
+          >
+            Donate
+          </Button>
           <PrimaryButton
             to={links.primaryCTA}
             className="inline-flex items-center justify-center h-12 px-6 text-sm font-medium whitespace-nowrap rounded-full"
@@ -129,11 +126,13 @@ const Navbar = () => {
 
           {/* CTA button (mobile) */}
           <PrimaryButton to="https://docs.google.com/forms/d/e/1FAIpQLSfP6ysp6y_SNcuHb1x9v-nMxfXR7-kcyBogN2ZMF--2byOzyg/viewform">Contribute to OSK</PrimaryButton>
-          {links.donate && (
-            <Button href={links.donate} external variant="donate">
-              Donate
-            </Button>
-          )}
+          <Button
+            to="/donate"
+            variant="donate"
+            onClick={() => setMobileOpen(false)}
+          >
+            Donate
+          </Button>
         </div>
       )}
     </>

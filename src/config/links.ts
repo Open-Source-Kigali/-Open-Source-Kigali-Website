@@ -1,6 +1,5 @@
 const links = {
   primaryCTA: "https://github.com/Open-Source-Kigali",
-  donate: "",
   social: {
     discord: "https://discord.com/invite/3dTFZSn6Tq/invite/osk",
   },

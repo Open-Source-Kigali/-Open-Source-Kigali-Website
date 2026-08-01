@@ -1,10 +1,13 @@
 import { forwardRef } from "react";
+import { Link }       from "react-router";
 import { cn }         from "@/lib/utils";
 
 export type ButtonVariant = "primary" | "secondary" | "ghost" | "dark" | "donate";
 export type ButtonSize    = "sm" | "md" | "lg";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick"> {
+  onClick?:   React.MouseEventHandler<HTMLElement>;
   variant?:   ButtonVariant;
   size?:      ButtonSize;
   loading?:   boolean;
@@ -13,6 +16,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   href?:      string;
   external?:  boolean;
+  /** Internal route. Renders a router Link instead of an anchor. */
+  to?:        string;
 }
 
 const VARIANTS: Record<ButtonVariant, string> = {
@@ -43,6 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       href,
       external,
+      to,
       ...props
     },
     ref
@@ -67,6 +73,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {!loading && iconRight}
       </>
     );
+
+    if (to) {
+      return (
+        <Link to={to} className={base} onClick={props.onClick}>
+          {content}
+        </Link>
+      );
+    }
 
     if (href) {
       return (

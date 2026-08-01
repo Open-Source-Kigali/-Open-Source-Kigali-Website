@@ -48,3 +48,5 @@ export {
   PARTNERSHIP_TIERS,
   AFRICAN_COUNTRIES,
 } from "./partnersForm";
+
+export { MONTHLY_TIERS, ONE_TIME_TIER } from "./donate";

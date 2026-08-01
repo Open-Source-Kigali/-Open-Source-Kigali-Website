@@ -57,3 +57,8 @@ export type {
   StatKey,
   StatDisplay,
 } from "./stats.types";
+
+export type {
+  DonateInterval,
+  DonateTier,
+} from "./donate.types";
