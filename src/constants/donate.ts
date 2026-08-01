@@ -1,46 +1,29 @@
-import type { DonateTier } from "@/types";
+import type { DonatePlan } from "@/types";
 
-export const MONTHLY_TIERS: DonateTier[] = [
-  {
-    id: "supporter",
-    name: "Supporter",
-    amount: 5000,
-    currency: "RWF",
-    interval: "monthly",
-    description: "For students and first time donors.",
-    methods: "Card",
-    url: "",
-  },
-  {
-    id: "contributor",
-    name: "Contributor",
-    amount: 15000,
-    currency: "RWF",
-    interval: "monthly",
-    description: "Our most common plan.",
-    methods: "Card",
-    url: "",
-    featured: true,
-  },
-  {
-    id: "sustainer",
-    name: "Sustainer",
-    amount: 50000,
-    currency: "RWF",
-    interval: "monthly",
-    description: "For companies and senior engineers.",
-    methods: "Card",
-    url: "",
-  },
-];
+export const DONATE_CURRENCY = "USD";
 
-export const ONE_TIME_TIER: DonateTier = {
-  id: "one-time",
-  name: "One-time donation",
-  amount: null,
-  currency: "RWF",
-  interval: "one-time",
-  description: "Give any amount, once. No commitment.",
-  methods: "Card and mobile money",
-  url: "",
+export const ONE_TIME_PLAN: DonatePlan = {
+  key: "one-time",
+  label: "One-time",
+  blurb: "Give once, with a card or mobile money.",
+  presets: [
+    { amount: 10, url: "" },
+    { amount: 25, url: "" },
+    { amount: 50, url: "" },
+  ],
+  customUrl: "",
 };
+
+export const MONTHLY_PLAN: DonatePlan = {
+  key: "monthly",
+  label: "Monthly",
+  blurb: "Support us every month. Card only, cancel any time.",
+  presets: [
+    { amount: 25, url: "" },
+    { amount: 50, url: "" },
+    { amount: 100, url: "" },
+  ],
+  customUrl: "",
+};
+
+export const DONATE_PLANS: DonatePlan[] = [ONE_TIME_PLAN, MONTHLY_PLAN];

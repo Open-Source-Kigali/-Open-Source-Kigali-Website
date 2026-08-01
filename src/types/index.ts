@@ -59,6 +59,7 @@ export type {
 } from "./stats.types";
 
 export type {
-  DonateInterval,
-  DonateTier,
+  DonatePlanKey,
+  DonateAmount,
+  DonatePlan,
 } from "./donate.types";

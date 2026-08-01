@@ -1,140 +1,131 @@
-import { Check, CreditCard, Smartphone } from "lucide-react";
+import { useState } from "react";
+import { Check } from "lucide-react";
 import EyebrowLabel from "@/components/UI/EyebrowLabel";
-import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
-import { Button } from "@/components/UI";
-import { MONTHLY_TIERS, ONE_TIME_TIER } from "@/constants";
-import type { DonateTier } from "@/types";
-import { formatNumber } from "@/lib/formatters";
+import { DONATE_CURRENCY, DONATE_PLANS } from "@/constants";
+import type { DonatePlan, DonatePlanKey } from "@/types";
 
-const TierCta = ({ tier }: { tier: DonateTier }) => {
-  if (!tier.url) {
+const AmountButton = ({ amount, url }: { amount: number; url: string }) => {
+  const label = `$${amount}`;
+  if (!url) {
     return (
-      <Button variant="secondary" fullWidth disabled>
-        Coming soon
-      </Button>
+      <span
+        aria-disabled="true"
+        className="flex items-center justify-center h-14 rounded-lg border border-gray-200 text-gray-300 text-lg font-bold cursor-not-allowed"
+      >
+        {label}
+      </span>
     );
   }
   return (
-    <Button
-      href={tier.url}
-      external
-      variant={tier.featured ? "donate" : "secondary"}
-      fullWidth
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center h-14 rounded-lg border border-gray-300 text-gray-900 text-lg font-bold hover:border-gray-900 transition-colors"
     >
-      {tier.interval === "monthly" ? "Support monthly" : "Donate once"}
-    </Button>
+      {label}
+    </a>
   );
 };
 
-const Donate = () => (
-  <div className="bg-white">
-    <section className="pt-32 pb-16 px-6 md:px-20">
-      <div className="max-w-3xl mx-auto text-center">
-        <EyebrowLabel text="Support OSK" />
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-5">
-          Help us keep Rwanda's open source community running.
-        </h1>
-        <p className="text-gray-500 text-base md:text-lg leading-relaxed">
-          Open Source Kigali is community run. Donations go toward meetups,
-          mentorship, and keeping our projects maintained.
-        </p>
-      </div>
-    </section>
+const PlanPanel = ({ plan }: { plan: DonatePlan }) => (
+  <div>
+    <p className="text-gray-500 text-sm mb-5">{plan.blurb}</p>
 
-    <section className="pb-12 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {MONTHLY_TIERS.map((tier, i) => (
-            <ScrollAnimatedItem
-              key={tier.id}
-              delay={i * 0.1}
-              className={`rounded-2xl border p-7 flex flex-col ${
-                tier.featured
-                  ? "border-[#f4cd03] shadow-sm"
-                  : "border-gray-100"
-              }`}
-            >
-              {tier.featured && (
-                <span className="self-start mb-3 px-2.5 py-1 rounded-full bg-[#f4cd03] text-gray-900 text-xs font-bold uppercase tracking-wide">
-                  Most common
-                </span>
-              )}
-              <h3 className="text-base font-black text-gray-900 mb-2">
-                {tier.name}
-              </h3>
-              <p className="mb-4">
-                <span className="text-3xl font-black text-gray-900">
-                  {formatNumber(tier.amount ?? 0)}
-                </span>
-                <span className="text-gray-500 text-sm font-medium">
-                  {" "}
-                  {tier.currency} / month
-                </span>
-              </p>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
-                {tier.description}
-              </p>
-              <TierCta tier={tier} />
-            </ScrollAnimatedItem>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="grid grid-cols-3 gap-3 mb-4">
+      {plan.presets.map((p) => (
+        <AmountButton key={p.amount} amount={p.amount} url={p.url} />
+      ))}
+    </div>
 
-    <section className="pb-20 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto">
-        <div className="rounded-2xl border border-gray-100 bg-gray-50 p-7 flex flex-col md:flex-row md:items-center gap-6">
-          <div className="flex-1">
-            <h3 className="text-base font-black text-gray-900 mb-2">
-              {ONE_TIME_TIER.name}
-            </h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              {ONE_TIME_TIER.description} Pay with a card or with mobile money.
-            </p>
-          </div>
-          <div className="md:w-56">
-            <TierCta tier={ONE_TIME_TIER} />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="pb-24 px-6 md:px-20">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-xl font-black text-gray-900 mb-5 text-center">
-          Ways to pay
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="border border-gray-100 rounded-2xl p-6">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary-colour flex items-center justify-center mb-4">
-              <Smartphone size={20} />
-            </div>
-            <h3 className="text-base font-black text-gray-900 mb-2">
-              Mobile money
-            </h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Available for one-time donations. Monthly plans need a card, so
-              they cannot be set up on mobile money.
-            </p>
-          </div>
-          <div className="border border-gray-100 rounded-2xl p-6">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-primary-colour flex items-center justify-center mb-4">
-              <CreditCard size={20} />
-            </div>
-            <h3 className="text-base font-black text-gray-900 mb-2">Card</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Visa and Mastercard, from Rwanda or anywhere else. Works for both
-              monthly and one-time.
-            </p>
-          </div>
-        </div>
-        <p className="flex items-center justify-center gap-2 text-gray-500 text-sm mt-6">
-          <Check size={16} className="text-primary-colour" />
-          You can cancel a monthly plan at any time.
-        </p>
-      </div>
-    </section>
+    {plan.customUrl ? (
+      <a
+        href={plan.customUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center h-14 rounded-lg bg-[#f4cd03] text-gray-900 text-base font-bold hover:bg-[#d9b703] transition-colors"
+      >
+        Enter your own amount
+      </a>
+    ) : (
+      <span
+        aria-disabled="true"
+        className="flex items-center justify-center h-14 rounded-lg bg-gray-100 text-gray-400 text-base font-bold cursor-not-allowed"
+      >
+        Coming soon
+      </span>
+    )}
   </div>
 );
+
+const Donate = () => {
+  const [active, setActive] = useState<DonatePlanKey>("one-time");
+  const plan = DONATE_PLANS.find((p) => p.key === active) ?? DONATE_PLANS[0];
+
+  return (
+    <div className="bg-white">
+      <section className="pt-32 pb-12 px-6 md:px-20">
+        <div className="max-w-2xl mx-auto text-center">
+          <EyebrowLabel text="Support OSK" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-5">
+            Help keep Rwanda's open source community running.
+          </h1>
+          <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+            Open Source Kigali is community run. Your donation goes toward
+            meetups, mentorship, and keeping our projects maintained.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-24 px-6">
+        <div className="max-w-md mx-auto border border-gray-200 rounded-2xl p-6 sm:p-8">
+          {/* Plan tabs */}
+          <div
+            role="tablist"
+            aria-label="Donation frequency"
+            className="grid grid-cols-2 gap-1 p-1 mb-6 rounded-lg bg-gray-100"
+          >
+            {DONATE_PLANS.map((p) => {
+              const selected = p.key === active;
+              return (
+                <button
+                  key={p.key}
+                  role="tab"
+                  aria-selected={selected}
+                  onClick={() => setActive(p.key)}
+                  className={`h-10 rounded-md text-sm font-bold transition-colors ${
+                    selected
+                      ? "bg-white text-gray-900 shadow-sm"
+                      : "text-gray-500 hover:text-gray-900"
+                  }`}
+                >
+                  {p.label}
+                </button>
+              );
+            })}
+          </div>
+
+          <PlanPanel plan={plan} />
+
+          <p className="text-xs text-gray-400 text-center mt-5">
+            Amounts in {DONATE_CURRENCY}. You are taken to Flutterwave to
+            complete your donation securely.
+          </p>
+        </div>
+
+        <ul className="max-w-md mx-auto mt-6 space-y-2">
+          <li className="flex items-center gap-2 text-gray-500 text-sm">
+            <Check size={16} className="text-primary-colour shrink-0" />
+            One-time donations accept card and mobile money.
+          </li>
+          <li className="flex items-center gap-2 text-gray-500 text-sm">
+            <Check size={16} className="text-primary-colour shrink-0" />
+            Monthly donations use a card and can be cancelled any time.
+          </li>
+        </ul>
+      </section>
+    </div>
+  );
+};
 
 export default Donate;
