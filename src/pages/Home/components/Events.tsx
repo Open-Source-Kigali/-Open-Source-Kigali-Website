@@ -1,15 +1,12 @@
 import { NavLink } from "react-router";
-import {  Calendar, Clock, MapPin} from "lucide-react";
-import { Loader} from "@/components/UI";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import { Skeleton } from "@/components/UI";
 import { ScrollAnimatedItem } from "@/components/UI/ScrollAnimatedItem";
 import EyebrowLabel from "@/components/UI/EyebrowLabel";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import SecondaryButton from "@/components/UI/SecondaryButton";
-import {  useEvents} from "@/hooks";
-import type { HomeEventType} from "@/constants";
-
-
-
+import { useEvents } from "@/hooks";
+import type { HomeEventType } from "@/constants";
 
 
 const EVENT_TYPE_STYLES: Record<HomeEventType, string> = {
@@ -18,6 +15,51 @@ const EVENT_TYPE_STYLES: Record<HomeEventType, string> = {
   meetup: "bg-purple-100 text-purple-600",
   session: "bg-orange-100 text-orange-600",
 };
+
+const EventCardSkeleton = () => (
+  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+    <Skeleton className="h-40 w-full" />
+    <div className="p-6 flex flex-col flex-1">
+      <Skeleton className="h-6 w-20 rounded-full" />
+      <Skeleton className="h-5 w-3/4 mt-4" />
+      <Skeleton className="h-4 w-full mt-3" />
+      <Skeleton className="h-4 w-5/6 mt-2" />
+      <div className="flex flex-col gap-2.5 mt-5">
+        <Skeleton className="h-3.5 w-4/5" />
+        <Skeleton className="h-3.5 w-3/5" />
+        <Skeleton className="h-3.5 w-2/3" />
+      </div>
+      <Skeleton className="h-5 w-16 mt-5" />
+    </div>
+  </div>
+);
+
+const EventsLoadingSkeleton = () => (
+  <div className="space-y-8">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
+      <div className="md:flex">
+        <div className="md:w-2/3 p-6 sm:p-8 md:p-10">
+          <Skeleton className="h-7 w-24 rounded-full" />
+          <Skeleton className="h-8 w-3/4 mt-4" />
+          <Skeleton className="h-4 w-full mt-4" />
+          <Skeleton className="h-4 w-11/12 mt-2" />
+          <Skeleton className="h-4 w-5/6 mt-2" />
+          <div className="flex flex-wrap gap-4 mt-8 mb-8">
+            <Skeleton className="h-11 w-36 rounded-full" />
+            <Skeleton className="h-11 w-28 rounded-full" />
+          </div>
+        </div>
+        <Skeleton className="md:w-1/3 h-56 md:h-auto" />
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <EventCardSkeleton />
+      <EventCardSkeleton />
+      <EventCardSkeleton />
+    </div>
+  </div>
+);
 
 export const Events = () => {
     const { events, loading: eventsLoading, error: eventsError } = useEvents();
@@ -63,7 +105,7 @@ export const Events = () => {
 
           {/* Events content */}
           {eventsLoading ? (
-            <Loader />
+            <EventsLoadingSkeleton />
           ) : eventsError ? (
             <p className="text-center text-sm text-gray-500 py-12">
               Failed to load events: {eventsError}
@@ -102,13 +144,13 @@ export const Events = () => {
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <PrimaryButton
-                      to=""
+                      to="/event"
                       className="w-full md:w-auto mb-3 md:mb-0"
                     >
                       Register Now
                     </PrimaryButton>
                     <SecondaryButton
-                      to=""
+                      to="/event"
                       className="w-full md:w-auto mb-3 md:mb-0"
                     >
                       Learn More
