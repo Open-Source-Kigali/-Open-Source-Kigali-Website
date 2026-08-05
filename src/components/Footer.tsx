@@ -16,6 +16,9 @@ const linkGroups: FooterLinkGroup[] = [
       { label: "About OSK", to: "/about" },
       { label: "Our Team", to: "/about" },
       { label: "Partners", to: "/partners" },
+      ...(socilLink.donate
+        ? [{ label: "Donate", to: socilLink.donate, external: true }]
+        : []),
     ],
   },
   {
