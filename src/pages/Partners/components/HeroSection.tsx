@@ -1,5 +1,5 @@
 import PrimaryButton from "@/components/UI/PrimaryButton";
-import EyebrowLabel from "@/components/UI/EyebrowLable";
+import EyebrowLabel from "@/components/UI/EyebrowLabel";
 
 
 
