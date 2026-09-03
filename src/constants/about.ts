@@ -1,8 +1,8 @@
 import nickImg from "@/assets/team/Nick.jpg";
 import didasImg from "@/assets/team/Didas.jpg";
 import debbieImg from "@/assets/team/debbie.jpg";
-// import innocenciaImg from "@/assets/team/innocencia.jpg";
-import jeanImg from "@/assets/team/Jean Pual.jpg";
+import innocenciaImg from "@/assets/team/innocencia.jpg";
+import jeanImg from "@/assets/team/jean-paul.jpg";
 import kingImg from "@/assets/team/Kinf.jpg";
 import zaraImg from "@/assets/team/Zara.jpg";
 import felixImg from "@/assets/team/Felix.jpg";
@@ -71,46 +71,12 @@ export const ABOUT_TEAM = [
     featured: true,
     objectPosition: "top",
     links: {
-      linkedin: "https://linkedin.com/in/placeholder",
-      github: "https://github.com/placeholder",
-      twitter: null,
-      instagram: null,
-      facebook: null,
-      figma: null,
-    },
-  },
-  {
-    name: "Nancy Teta Kwizera",
-    role: "Operations Lead",
-    initials: "OL",
-    bg: "bg-emerald-500",
-    avatar: zaraImg,
-    featured: false,
-    objectPosition: "50% 20%",
-    links: {
       linkedin: null,
-      github: "https://github.com/nancyzera",
+      github: null,
       twitter: null,
       instagram: null,
       facebook: null,
       figma: null,
-    },
-  },
-  {
-    name: "Lokosang Felix",
-    role: "Content Team",
-    initials: "TL",
-    bg: "bg-violet-500",
-    avatar: felixImg,
-    featured: false,
-    objectPosition: "50% 30%",
-    links: {
-      linkedin: "https://www.linkedin.com/in/lokosang-felix-b7055128b/",
-      github: "https://github.com/Lokosang-wani",
-      twitter: "https://x.com/lokosangwani22",
-      instagram: null,
-      facebook: null,
-      figma: "https://www.figma.com/@lokosang22",
     },
   },
   {
@@ -174,7 +140,7 @@ export const ABOUT_TEAM = [
     objectPosition: "50% 40%",
     links: {
       linkedin:
-        "https://www.linkedin.com/in/jean-paul-elisa?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "https://www.linkedin.com/in/jean-paul-elisa?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: null,
       twitter: null,
       instagram: null,
@@ -200,6 +166,23 @@ export const ABOUT_TEAM = [
     },
   },
   {
+    name: "Lokosang Felix",
+    role: "Content Team",
+    initials: "TL",
+    bg: "bg-violet-500",
+    avatar: felixImg,
+    featured: false,
+    objectPosition: "50% 30%",
+    links: {
+      linkedin: "https://www.linkedin.com/in/lokosang-felix-b7055128b/",
+      github: "https://github.com/Lokosang-wani",
+      twitter: "https://x.com/lokosangwani22",
+      instagram: null,
+      facebook: null,
+      figma: "https://www.figma.com/@lokosang22",
+    },
+  },
+  {
     name: "Nadine Fiona BYUKUSENGE",
     role: "Tech Team",
     initials: "NF",
@@ -210,6 +193,40 @@ export const ABOUT_TEAM = [
     links: {
       linkedin: "https://www.linkedin.com/in/nadine-fiona-byukusenge/",
       github: "https://github.com/Nadinefiona",
+      twitter: null,
+      instagram: null,
+      facebook: null,
+      figma: null,
+    },
+  },
+  {
+    name: "Nancy Teta Kwizera",
+    role: "Operations Lead",
+    initials: "OL",
+    bg: "bg-emerald-500",
+    avatar: zaraImg,
+    featured: false,
+    objectPosition: "50% 20%",
+    links: {
+      linkedin: null,
+      github: "https://github.com/nancyzera",
+      twitter: null,
+      instagram: null,
+      facebook: null,
+      figma: null,
+    },
+  },
+  {
+    name: "Nick-Lemy Kayiranga",
+    role: "Tech Team",
+    initials: "CL",
+    bg: "bg-rose-500",
+    avatar: nickImg,
+    featured: false,
+    objectPosition: "50% 40%",
+    links: {
+      linkedin: "https://www.linkedin.com/in/nick-lemy",
+      github: "https://github.com/nick-lemy",
       twitter: null,
       instagram: null,
       facebook: null,
