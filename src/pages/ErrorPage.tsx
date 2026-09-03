@@ -1,23 +1,26 @@
-import { useRouteError, isRouteErrorResponse, NavLink } from "react-router"
+import { useEffect } from "react";
+import { useRouteError, isRouteErrorResponse, NavLink } from "react-router";
 
 const ErrorPage = () => {
-  const error = useRouteError()
+  const error = useRouteError();
 
-  let title = "Something went wrong"
-  let message = "An unexpected error occurred. Please try again."
+  let title = "Something went wrong";
+  let message = "An unexpected error occurred. Please try again.";
 
   if (isRouteErrorResponse(error)) {
     if (error.status === 404) {
-      title = "Page not found"
-      message = "The page you're looking for doesn't exist or has been moved."
+      title = "Page not found";
+      message = "The page you're looking for doesn't exist or has been moved.";
     } else {
-      title = `${error.status} ${error.statusText}`
-      message = error.data?.message ?? message
+      title = `${error.status} ${error.statusText}`;
+      message = error.data?.message ?? message;
     }
   } else if (error instanceof Error) {
-    message = error.message
+    message = error.message;
   }
-
+  useEffect(() => {
+    document.title = "Page Not Found | Open Source Kigali";
+  }, []);
   return (
     <main className="min-h-[70vh] flex items-center justify-center px-6">
       <div className="text-center max-w-md">
@@ -33,7 +36,7 @@ const ErrorPage = () => {
         </NavLink>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default ErrorPage
+export default ErrorPage;
